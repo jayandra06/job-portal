@@ -7,7 +7,7 @@ import { FaEyeSlash } from "react-icons/fa6";
 
 
 
-const Login = () => {
+const Registered = () => {
   const [ showPassword, setShowPassword ] = useState(false);
 
 
@@ -22,12 +22,27 @@ const Login = () => {
             <img src={Logo} alt="" />
           </div>
           <div className="login-center">
-            <h2>Welcome </h2>
+            <h2>Welcome</h2>
             <p>Please enter your details</p>
             <form>
               <input type="email" placeholder="Email" />
+
+          
+
+
+
               <div className="pass-input-div">
                 <input type={showPassword ? "text" : "password"} placeholder="Password" />
+                {showPassword ? <FaEyeSlash onClick={() => {setShowPassword(!showPassword)}} /> : <FaEye onClick={() => {setShowPassword(!showPassword)}} />}
+                
+              </div>
+
+
+
+
+
+              <div className="pass-input-div">
+                <input type={showPassword ? "text" : "password"} placeholder="Confirm Password" />
                 {showPassword ? <FaEyeSlash onClick={() => {setShowPassword(!showPassword)}} /> : <FaEye onClick={() => {setShowPassword(!showPassword)}} />}
                 
               </div>
@@ -39,15 +54,18 @@ const Login = () => {
                     Remember for 30 days
                   </label>
                 </div>
-                <a href="#" className="forgot-pass-link">
-                  Forgot password?
-                </a>
+               
+               
+
               </div>
             </form>
           </div>
 
+
+
+
           <p className="login-bottom-p">
-            Don't have an account? <a href="/register">Sign Up</a>
+            Already have an account? <a href="/login">Sign In</a>
           </p>
         </div>
       </div>
@@ -55,4 +73,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Registered;
